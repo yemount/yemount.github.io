@@ -26,6 +26,10 @@
             font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
         }
 
+        .bold {
+            font-weight: 800;
+        }
+
         .hidden {
             display: none !important;
         }
@@ -38,7 +42,6 @@
         }
 
         .page-title {
-            font-weight: 800;
             font-size: 28px;
         }
 
@@ -81,7 +84,6 @@
         }
 
         .contact-title {
-            font-weight: 800;
             font-size: 18px;
         }
 
@@ -91,19 +93,56 @@
 
         #content-projects .left-bar {
             width: 200px;
-            margin-left: 60px;
-            margin-right: 60px;
+            height: 200px;
+            margin: 10px 60px 0 60px;
             padding: 20px;
             background: white;
         }
 
         .left-bar .lb-header {
-            font-weight: 800;
             margin-bottom: 20px;
         }
 
         .left-bar .lb-sub {
             margin: 5px 20px;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 800px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: white;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .project-card p {
+            width: 200px;
+        }
+
+        .project-card img {
+            margin-top: 10px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .content-project-details {
+            width: 800px;
+        }
+
+        .content-project-details .title {
+            font-size: 16px;
+        }
+
+        .content-project-details img {
+            max-width: 700px;
+            margin: 20px;
         }
     </style>
 </head>
@@ -111,7 +150,7 @@
 <body>
     <div id="app">
         <div class="header">
-            <p class="page-title clickable" v-on:click="toggleContent('default')">Shan Huang</p>
+            <p class="page-title bold clickable" v-on:click="toggleContent('default')">Shan Huang</p>
             <div class="header-tabs">
                 <p class="clickable" v-on:click="toggleContent('projects')">Projects</p>
                 <p class="clickable">Shop</p>
@@ -134,7 +173,7 @@
                     <br/>
                     <br/>
                     <br/>
-                    <p class="contact-title">Contact</p>
+                    <p class="contact-title bold">Contact</p>
                     <p>yemount@gmail.com</p>
                     <p>Instagram</p>
                     <p>Twitter</p>
@@ -144,37 +183,36 @@
                     <img src="images/cover-image.png">
                 </div>
             </div>
-            <div id="content-projects" v-if="showContent['projects']">
+            <div id="content-projects" v-if="showContent['projects'] || showContent['project-details']">
                 <div class="left-bar">
-                    <p class="lb-header">Categories</p>
-                    <p class="lb-sub clickable" onclick="filterProjects()">All</p>
-                    <p class="lb-sub clickable" onclick="filterProjects( 'software')">Software</p>
-                    <p class="lb-sub clickable" onclick="filterProjects( 'visual-art')">Visual art</p>
-                    <p class="lb-sub clickable">Interaction design</p>
-                    <p class="lb-sub clickable">Drawing</p>
+                    <p class="lb-header bold">Categories</p>
+                    <p class="lb-sub clickable" v-on:click="filterProjects()">All</p>
+                    <p class="lb-sub clickable" v-on:click="filterProjects('gen-art')">Generative art</p>
+                    <p class="lb-sub clickable" v-on:click="filterProjects('software')">Software</p>
+                    <p class="lb-sub clickable" v-on:click="filterProjects('tech-art')">Technical art</p>
+                    <p class="lb-sub clickable" v-on:click="filterProjects('drawing')">2D drawings</p>
                 </div>
-                <div class="project-container">
-                    <div class="project-card software">
-                        Guess My Sketch
-                    </div>
-                    <div class="project-card software">
-                        Iconic History
-                    </div>
-                    <div class="project-card software">
-                        The Rolling Jelly
-                    </div>
-                    <div class="project-card visual-art">
-                        Cat Stroke
-                    </div>
-                    <div class="project-card visual-art">
 
+                <div>
+                    <div class="project-container" v-if="showContent['projects']">
+                        <div class=" project-card clickable " v-for="project in projects " v-on:click="showProject(project) ">
+                            <p>{{project.title}}</p>
+                            <image v-if="project.thumb " v-bind:src="project.thumb "></image>
+                        </div>
                     </div>
+                </div>
+
+                <div class="content-project-details" v-if="showContent[ 'project-details'] ">
+                    <p class="title bold">{{selectedProject.title}}</p>
+                    <br/>
+                    <br/>
+                    <div v-innerhtml="selectedProject"></div>
                 </div>
             </div>
         </div>
         <div></div>
     </div>
-    <div class="footer"></div>
+    <div class=" footer "></div>
     </div>
 </body>
 
