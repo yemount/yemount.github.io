@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
     <script type="text/javascript" src="lib/vue.js"></script>
@@ -159,7 +160,7 @@
             width: 240px;
             min-width: 240px;
             height: 200px;
-            margin: 10px 60px 0 60px;
+            margin: 10px 60px 20px 60px;
             padding: 20px 0 20px 20px;
             background: white;
         }
@@ -224,6 +225,48 @@
         .project-details-container img {
             max-width: 700px;
             margin: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .header {
+                flex-direction: column;
+            }
+
+            .header-tabs {
+                margin-left: -10px;
+                margin-top: 10px;
+            }
+
+            .home-root,
+            .projects-root,
+            .project-details-root {
+                flex-direction: column;
+            }
+
+            .home-root .intro {
+                width: initial;
+                margin: 40px 40px 40px 40px;
+            }
+
+            .cover-image img {
+                width: 100%;
+                height: initial;
+            }
+
+            .project-container {
+                width: initial;
+                justify-content: center;
+            }
+
+            .project-details-container {
+                width: initial;
+                padding: 10px 40px;
+            }
+
+            .project-details-container img {
+                max-width: 100%;
+                margin-left: 0;
+            }
         }
     </style>
 </head>
