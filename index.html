@@ -33,11 +33,11 @@
     </script>
     <script type="text/x-template" id="projects-template">
         <div class="projects-root">
-            <left-navbar></left-navbar>
+            <left-navbar v-bind:activecategory="category"></left-navbar>
             <div class="project-container">
                 <div class="project-card" v-for="project in projects">
                     <router-link :to="`/project-details/${project.id}`">
-                        <p>{{project.title}}</p>
+                        <p>{{project.title}}</p><br/>
                         <img v-if="project.thumb" v-bind:src="project.thumb"></img>
                     </router-link>
                 </div>
@@ -47,11 +47,9 @@
     <script type="text/x-template" id="left-navbar-template">
         <div class="left-bar">
             <p class="lb-header bold">Categories</p>
-            <p class="lb-sub clickable" v-on:click="filterProjects()">All</p>
-            <p class="lb-sub clickable" v-on:click="filterProjects('gen-art')">Generative art</p>
-            <p class="lb-sub clickable" v-on:click="filterProjects('software')">Software</p>
-            <p class="lb-sub clickable" v-on:click="filterProjects('tech-art')">Technical art</p>
-            <p class="lb-sub clickable" v-on:click="filterProjects('drawing')">2D drawings</p>
+            <p class="lb-sub" v-for="category in categories">
+                <span v-bind:class="[category.isActive ? 'active' : '']"><router-link :to="`/projects/${category.category}`"> {{category.category}} ({{category.count}})</router-link></span>
+            </p>
         </div>
     </script>
     <script type="text/x-template" id="project-details-template">    
@@ -59,6 +57,10 @@
             <left-navbar></left-navbar>
             <div class="project-details-container">
                 <p class="title bold ">{{project.title}}</p>
+                <br/>
+                <span v-for="cat in project.categories">
+                    <router-link :to="`/projects/${cat}`"> #{{cat}} </router-link>
+                </span>
                 <br/>
                 <br/>
                 <div v-html="project.content"></div>
@@ -150,11 +152,11 @@
         }
 
         .left-bar {
-            width: 200px;
-            min-width: 200px;
+            width: 240px;
+            min-width: 240px;
             height: 200px;
             margin: 10px 60px 0 60px;
-            padding: 20px;
+            padding: 20px 0 20px 20px;
             background: white;
         }
 
@@ -163,16 +165,31 @@
         }
 
         .left-bar .lb-sub {
-            margin: 5px 20px;
+            margin: 5px 15px;
+        }
+
+        .lb-sub a,
+        .project-card a {
+            text-decoration: none;
+        }
+
+        .lb-sub .active a {
+            color: #3CB0DA;
+        }
+
+        .project-details-container a {
+            text-decoration: none;
+            color: #3CB0DA;
         }
 
         .project-container {
             display: flex;
             flex-wrap: wrap;
-            width: 800px;
+            width: 950px;
         }
 
         .project-card {
+            width: 250px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -182,13 +199,13 @@
         }
 
         .project-card p {
-            width: 200px;
+            width: 250px;
         }
 
         .project-card img {
             margin-top: 10px;
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
         }
 
         .project-details-container {

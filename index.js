@@ -1,8 +1,9 @@
-let allProjects = [
+const navCategories = ['All', 'Generative art', 'Product design', 'Visual art', 'Digital fabrication', 'Game dev', 'Technical art'];
+const allProjects = [
   {
     id: 'world-map',
     title: 'Triangular world scratch map',
-    categories: ['gen-art'],
+    categories: ['Generative art', 'PaperJS', 'JavaScript', 'Digital fabrication', 'Visual art'],
     thumb: 'images/thumbnails/world-map.png',
     content: `
       <div>
@@ -27,7 +28,7 @@ let allProjects = [
   }, {
     id: 'million-shards',
     title: 'Million shards',
-    categories: ['gen-art'],
+    categories: ['Generative art', 'PaperJS', 'JavaScript', 'Digital fabrication', 'Visual art'],
     thumb: 'images/thumbnails/million-shards.png',
     content: `
       <div>2018<br/>
@@ -55,7 +56,7 @@ let allProjects = [
   }, {
     id: 'meow-stroke',
     title: 'Meow stroke',
-    categories: ['gen-art'],
+    categories: ['Generative art', 'PaperJS', 'JavaScript', 'Digital fabrication', 'Visual art'],
     thumb: 'images/thumbnails/meow-stroke.png',
     content: `
       <div>2019<br/>
@@ -81,7 +82,7 @@ let allProjects = [
   }, {
     id: 'ink-trail',
     title: 'Ink trail',
-    categories: ['gen-art'],
+    categories: ['Generative art', 'Processing', 'PaperJS', 'JavaScript', 'Animation', 'Audio visual', 'Visual art'],
     thumb: 'images/thumbnails/ink-trail.png',
     content: `
       <div>2019<br/>
@@ -105,7 +106,7 @@ let allProjects = [
   }, {
     id: 'wall-art',
     title: 'Laser cut wood sculptures',
-    categories: ['gen-art'],
+    categories: ['Generative art', 'PaperJS', 'JavaScript', 'Digital fabrication', 'Visual art'],
     thumb: 'images/thumbnails/wall-art.png',
     content: `
       <div>2018<br/>
@@ -131,7 +132,7 @@ let allProjects = [
   }, {
     id: 'gms',
     title: 'Guess My Sketch',
-    categories: ['software'],
+    categories: ['Javascript', 'Web', 'GoLang', 'Server dev', 'PaperJS', 'Product design', 'Game dev', 'Multiplayer networking', 'Viral'],
     thumb: 'images/thumbnails/gms.png',
     content: `
       <div>2018<br/>
@@ -172,7 +173,7 @@ let allProjects = [
   }, {
     id: 'ar-prototype',
     title: 'AR generative art prototype',
-    categories: ['software'],
+    categories: ['Unity', 'Augmented reality', 'Android', 'iOS', 'C#', 'GoLang', 'Server dev', 'Graphics', 'Generative art', 'Game dev', 'Product design', 'Technical art'],
     thumb: 'images/thumbnails/ar-prototype.png',
     content: `
       <div>
@@ -197,7 +198,7 @@ let allProjects = [
   }, {
     id: 'mr-jelly',
     title: 'Mr.Jelly',
-    categories: ['software'],
+    categories: ['Unity', 'Android', 'iOS', 'C#', 'Graphics', 'Game dev', 'Product design', 'Technical art'],
     thumb: 'images/thumbnails/mr-jelly.png',
     content: `
       <div>2016<br/>
@@ -222,7 +223,7 @@ let allProjects = [
   }, {
     id: 'gen-cityscape',
     title: 'Generative cityscape',
-    categories: ['gen-art'],
+    categories: ['Blender', 'Generative art', '3D modeling', 'Graphics', 'Data visualization', 'Technical art', 'Python', 'Visual art'],
     thumb: 'images/thumbnails/gen-cityscape.png',
     content: `
       <div>2016<br/>
@@ -247,7 +248,7 @@ let allProjects = [
   }, {
     id: 'iconic-history',
     title: 'Iconic History',
-    categories: ['software'],
+    categories: ['Javascript', 'Data visualization', 'Product design', 'Generative art', 'Viral'],
     thumb: 'images/thumbnails/iconic-history.png',
     content: `
       <div> 2014<br/>
@@ -278,7 +279,7 @@ let allProjects = [
   }, {
     id: 'low-poly',
     title: 'Low poly modeling',
-    categories: ['tech-art'],
+    categories: ['Maya', '3D modeling', 'Technical art', 'Visual art'],
     thumb: 'images/thumbnails/low-poly.png',
     content: `
       <div> Ongoing <br/>
@@ -306,7 +307,7 @@ let allProjects = [
   }, {
     id: 'whiteboard',
     title: 'Whiteboard drawing @ Google',
-    categories: ['drawing'],
+    categories: ['Visual art', 'Teaching'],
     thumb: 'images/thumbnails/whiteboard.png',
     content: `
       <div>Ongoing<br/>
@@ -332,7 +333,7 @@ let allProjects = [
   }, {
     id: 'drawing',
     title: 'Drawings & paintings',
-    categories: ['drawing'],
+    categories: ['Visual art'],
     thumb: 'images/thumbnails/drawing.png',
     content: `
       <div>
@@ -386,7 +387,16 @@ let allProjects = [
 const Home = { template: '#home-template' };
 const Projects = {
   template: '#projects-template',
-  props: ['projects'],
+  props: ['category'],
+  computed: {
+    projects: function () {
+      if (!this.category || this.category === 'All') {
+        return allProjects;
+      } else {
+        return allProjects.filter(proj => (proj.categories || []).includes(this.category));
+      }
+    }
+  }
 };
 const ProjectDetails = {
   template: '#project-details-template',
@@ -405,6 +415,9 @@ const routes = [
     }
   },
   {
+    path: '/projects/:category', component: Projects, props: true,
+  },
+  {
     path: '/project-details/:id', component: ProjectDetails, props: true
   },
 ];
@@ -412,7 +425,28 @@ const router = new VueRouter({ routes: routes });
 
 Vue.component('left-navbar', {
   template: '#left-navbar-template',
-  props: ['projects'],
+  props: ['projects', 'activecategory'],
+  computed: {
+    categories: function () {
+      let categories = { 'All': allProjects.length };
+      allProjects.forEach(proj => (proj.categories || []).forEach(cat => {
+        if (!categories[cat]) {
+          categories[cat] = 1;
+        } else {
+          categories[cat]++;
+        }
+      }));
+      return Object.keys(categories).filter(key => {
+        return navCategories.includes(key) || this.activecategory === key;
+      }).map(key => ({
+        category: key,
+        count: categories[key],
+        isActive: key === this.activecategory,
+      })).sort((cat1, cat2) => {
+        return cat2.count - cat1.count;
+      });
+    }
+  }
 });
 
 window.onload = () => {
