@@ -408,7 +408,7 @@ const routes = [
     path: '/project-details/:id', component: ProjectDetails, props: true
   },
 ];
-const router = new VueRouter({ routes: routes, mode: 'history' });
+const router = new VueRouter({ routes: routes });
 
 Vue.component('left-navbar', {
   template: '#left-navbar-template',
