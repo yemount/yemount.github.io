@@ -1,4 +1,3 @@
-const navCategories = ['All', 'Generative art', 'Product design', 'Visual art', 'Digital fabrication', 'Game dev', 'Technical art'];
 const allProjects = [
   {
     id: 'world-map',
@@ -56,7 +55,7 @@ const allProjects = [
   }, {
     id: 'meow-stroke',
     title: 'Meow stroke',
-    categories: ['Generative art', 'PaperJS', 'JavaScript', 'Digital fabrication', 'Visual art'],
+    categories: ['Generative art', 'PaperJS', 'JavaScript', 'Visual art'],
     thumb: 'images/thumbnails/meow-stroke.png',
     content: `
       <div>2019<br/>
@@ -372,6 +371,7 @@ const allProjects = [
     id: 'reel',
     title: 'Reel 2010-2014',
     thumb: 'images/thumbnails/reel.png',
+    categories: [],
     content: `
       Compilation from work fromm 2010-2014<br/>
       <br/>
@@ -383,93 +383,3 @@ const allProjects = [
     `
   }
 ];
-
-const Home = { template: '#home-template' };
-const Projects = {
-  template: '#projects-template',
-  props: ['category'],
-  computed: {
-    projects: function () {
-      if (!this.category || this.category === 'All') {
-        return allProjects;
-      } else {
-        return allProjects.filter(proj => (proj.categories || []).includes(this.category));
-      }
-    }
-  }
-};
-const ProjectDetails = {
-  template: '#project-details-template',
-  props: ['id'],
-  computed: {
-    project: function () {
-      return allProjects.find(proj => proj.id === this.id);
-    },
-  }
-}
-const routes = [
-  { path: '/', component: Home },
-  {
-    path: '/projects', component: Projects, props: {
-      projects: allProjects,
-    }
-  },
-  {
-    path: '/projects/:category', component: Projects, props: true,
-  },
-  {
-    path: '/project-details/:id', component: ProjectDetails, props: true
-  },
-];
-const router = new VueRouter({ routes: routes });
-
-Vue.component('left-navbar', {
-  template: '#left-navbar-template',
-  props: ['projects', 'activecategory'],
-  computed: {
-    categories: function () {
-      let categories = { 'All': allProjects.length };
-      allProjects.forEach(proj => (proj.categories || []).forEach(cat => {
-        if (!categories[cat]) {
-          categories[cat] = 1;
-        } else {
-          categories[cat]++;
-        }
-      }));
-      return Object.keys(categories).filter(key => {
-        return navCategories.includes(key) || this.activecategory === key;
-      }).map(key => ({
-        category: key,
-        count: categories[key],
-        isActive: key === this.activecategory,
-      })).sort((cat1, cat2) => {
-        return cat2.count - cat1.count;
-      });
-    }
-  }
-});
-
-window.onload = () => {
-  new Vue({
-    el: '#app',
-    router: router,
-    data: {
-      projects: allProjects,
-      selectedProject: null,
-    },
-    methods: {
-      filterProjects: function (tag) {
-        this.toggleContent('projects');
-        if (!tag) {
-          this.projects = allProjects;
-          return;
-        }
-        this.projects = allProjects.filter(proj => proj.categories && proj.categories.includes(tag));
-      },
-      showProject: function (project) {
-        this.toggleContent('project-details');
-        this.selectedProject = project;
-      }
-    }
-  });
-}

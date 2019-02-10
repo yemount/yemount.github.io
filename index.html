@@ -4,7 +4,8 @@
 <head>
     <script type="text/javascript" src="lib/vue.js"></script>
     <script type="text/javascript" src="lib/vue-router.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="projects.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <script type="text/x-template" id="home-template">
         <div class="home-root">
             <div class="intro">
@@ -14,17 +15,19 @@
                 the creative experience to everyone through interactive media.
                 <br/>
                 <br/> For collaboration enqueries, please
-                <a href="#"> get in touch</a>.
-                <br/> For buying prints, please checkout
-                <a href="#"> the print shop</a>.
+                <a href="mailto:yemount@gmail.com"> get in touch</a>.
+                <!-- <br/> For buying prints, please checkout
+                <a href="#"> the print shop</a>. -->
                 <br/>
                 <br/>
                 <br/>
-                <p class="contact-title bold">Contact</p>
-                <p>yemount@gmail.com</p>
-                <p>Instagram</p>
-                <p>Twitter</p>
-                <p>Weibo</p>
+                <br/>
+                <br/>
+                <p class="home-title bold"><router-link to="/projects">Projects</router-link></p><br/>
+                <p class="home-title bold">Contact</p>
+                <a href="mailto:yemount@gmail.com"><p>yemount@gmail.com</p></a>
+                <a href="https://www.instagram.com/yemount/"><p>Instagram</p></a>
+                <a href="https://twitter.com/yemount"><p>Twitter</p></a>
             </div>
             <div class="cover-image">
                 <img src="images/cover-image.png">
@@ -65,6 +68,11 @@
                 <br/>
                 <div v-html="project.content"></div>
             </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="about-template">
+        <div class="about-root">
+            ...
         </div>
     </script>
     <style>
@@ -108,10 +116,6 @@
             font-size: 28px;
         }
 
-        .clickable {
-            cursor: pointer;
-        }
-
         .header-tabs {
             display: flex;
         }
@@ -147,7 +151,7 @@
             height: 600px;
         }
 
-        .contact-title {
+        .home-title {
             font-size: 18px;
         }
 
@@ -234,9 +238,11 @@
                 <p>
                     <router-link to="/projects">Projects</router-link>
                 </p>
-                <p class="clickable">Shop</p>
-                <p class="clickable">About</p>
-                <p class="clickable">Contact</p>
+                <!-- <p class="clickable">Shop</p> -->
+                <p>
+                    <router-link to="/about">About</router-link>
+                </p>
+                <p>Contact</p>
             </div>
         </div>
         <div class="body">
