@@ -1,10 +1,6 @@
-let showContent = {
-  'default': true,
-  'project-details': false,
-};
-
 let allProjects = [
   {
+    id: 'world-map',
     title: 'Triangular world scratch map',
     categories: ['gen-art'],
     thumb: 'images/thumbnails/world-map.png',
@@ -16,19 +12,20 @@ let allProjects = [
         <br/>
         You can keep track of parts of the world you have adventured to by removing countries' interiors.
         Each country is filled with removable triangle bits.<br/>
-        <a href="images/world-map-1-hd.png"><img src="images/world-map-1.png"></a><br/>
+        <a href="/images/world-map-1-hd.png"><img src="/images/world-map-1.png"></a><br/>
         <br/>
         The generative algorithm creates shape, name tag and inner triangle division for each country, with additional optimization on vector paths to ensure
         they are laser cuttable and removable. The original map data is based on a geoJSON file from <a href="http://geojson.org/">http://geojson.org/</a>.<br/>
         <br/>
         The whole map is fully auto-generated with minimal hand editing. 
-        <a href="images/world-map-2-hd.png"><img src="images/world-map-2.png"></a><br/>
+        <a href="/images/world-map-2-hd.png"><img src="/images/world-map-2.png"></a><br/>
         Laser cutting on birch wood - fire! smoke! laser beam! and all that jazz!
-        <a href="images/world-map-3-hd.png"><img src="images/world-map-3.png"></a><br/>
+        <a href="/images/world-map-3-hd.png"><img src="/images/world-map-3.png"></a><br/>
         I designed these supports to hold continents together, following the same triangular / low-poly style.
-        <a href="images/world-map-4-hd.png"><img src="images/world-map-4.png"></a>
+        <a href="/images/world-map-4-hd.png"><img src="/images/world-map-4.png"></a>
       </div> `,
   }, {
+    id: 'million-shards',
     title: 'Million shards',
     categories: ['gen-art'],
     thumb: 'images/thumbnails/million-shards.png',
@@ -41,21 +38,22 @@ let allProjects = [
         At the core of the generative rule is Delaunay triangulation, though supporting algorithms (e.g. edge-detection) were adopted to stylize the visual output.<br/>
         I tuned the algorithm to maximally preserve the image source features while introducing tons of intricate triangular details. Thus the name 'million shards'.<br/>
         <br/>
-        <a href="images/million-shards-1-hd.png"><img src="images/million-shards-1.png"></a><br/>
-        <a href="images/million-shards-2-hd.png"><img src="images/million-shards-2.png"></a><br/>
+        <a href="/images/million-shards-1-hd.png"><img src="/images/million-shards-1.png"></a><br/>
+        <a href="/images/million-shards-2-hd.png"><img src="/images/million-shards-2.png"></a><br/>
         Laser engraving details<br/>
-        <a href="images/million-shards-3-hd.png"><img src="images/million-shards-3.png"></a><br/>
+        <a href="/images/million-shards-3-hd.png"><img src="/images/million-shards-3.png"></a><br/>
         Generated digital output<br/>
-        <a href="images/million-shards-5-hd.png"><img src="images/million-shards-5.png"></a><br/>
-        <a href="images/million-shards-6-hd.png"><img src="images/million-shards-6.png"></a><br/>
-        <a href="images/million-shards-7-hd.png"><img src="images/million-shards-7.png"></a><br/>
+        <a href="/images/million-shards-5-hd.png"><img src="/images/million-shards-5.png"></a><br/>
+        <a href="/images/million-shards-6-hd.png"><img src="/images/million-shards-6.png"></a><br/>
+        <a href="/images/million-shards-7-hd.png"><img src="/images/million-shards-7.png"></a><br/>
         Early prototypes featuring triangulated images and cross hatches, drawn using a plotter. <br/>
-        <a href="images/million-shards-8-hd.png"><img src="images/million-shards-8.png"></a><br/>
+        <a href="/images/million-shards-8-hd.png"><img src="/images/million-shards-8.png"></a><br/>
         Yes, yeeeesss... Plotters are addictive to look at.<br/>
-        <img src="images/plotter.gif"><br/>
+        <img src="/images/plotter.gif"><br/>
         <br/>
       </div>`,
   }, {
+    id: 'meow-stroke',
     title: 'Meow stroke',
     categories: ['gen-art'],
     thumb: 'images/thumbnails/meow-stroke.png',
@@ -69,18 +67,19 @@ let allProjects = [
         <br/>
         (I'm thinking about making this a WeChat miniprogram - let me know if you think that should happen!)
         <br/>
-        <a href="images/meow-stroke-1-hd.png"><img src="images/meow-stroke-1.png"></a><br/>
+        <a href="/images/meow-stroke-1-hd.png"><img src="/images/meow-stroke-1.png"></a><br/>
         The raw hand drawn stroke input <br/>
-        <a href="images/meow-stroke-2-hd.png"><img src="images/meow-stroke-2.png"></a><br/>
+        <a href="/images/meow-stroke-2-hd.png"><img src="/images/meow-stroke-2.png"></a><br/>
         More meow strokes! <br/>
-        <a href="images/meow-stroke-4-hd.png"><img src="images/meow-stroke-4.png"></a><br/>
+        <a href="/images/meow-stroke-4-hd.png"><img src="/images/meow-stroke-4.png"></a><br/>
         My name (Chinese character) in meow stroke <br/>
-        <a href="images/meow-stroke-5-hd.png"><img src="images/meow-stroke-5.png"></a><br/>
+        <a href="/images/meow-stroke-5-hd.png"><img src="/images/meow-stroke-5.png"></a><br/>
         <br/>
         The traingulate cat 'base vocabulary' <br/>
-        <img src="images/meow-stroke-3.png"><br/>
+        <img src="/images/meow-stroke-3.png"><br/>
       </div>`,
   }, {
+    id: 'ink-trail',
     title: 'Ink trail',
     categories: ['gen-art'],
     thumb: 'images/thumbnails/ink-trail.png',
@@ -92,18 +91,19 @@ let allProjects = [
         distort, they introduce exciting potentials to animate & abstract the visuals.<br/>
         <br/>
         The latest, unfinished piece is a short animation sequence brining ink lotus to life. Demo animation as below:<br/>
-        <img src="images/ink-trail-anim.gif"><br/>
+        <img src="/images/ink-trail-anim.gif"><br/>
         <br/>
         Lotus flower pond, generated from a particle system where each particle is a leaf or a pedal, and springs are placed between
         particles to control their adjacency.<br/>
-        <a href="images/ink-trail-2-hd.png"><img src="images/ink-trail-2.png"></a><br/>
-        <a href="images/ink-trail-4-hd.png"><img src="images/ink-trail-4.png"></a><br/>
+        <a href="/images/ink-trail-2-hd.png"><img src="/images/ink-trail-2.png"></a><br/>
+        <a href="/images/ink-trail-4-hd.png"><img src="/images/ink-trail-4.png"></a><br/>
         <br/>
         Process screenshot - benchmarking <br/>
-        <a href="images/ink-trail-3-hd.png"><img src="images/ink-trail-3.png"></a><br/>
+        <a href="/images/ink-trail-3-hd.png"><img src="/images/ink-trail-3.png"></a><br/>
       </div>
     `,
   }, {
+    id: 'wall-art',
     title: 'Laser cut wood sculptures',
     categories: ['gen-art'],
     thumb: 'images/thumbnails/wall-art.png',
@@ -116,19 +116,20 @@ let allProjects = [
         structures to hold wooden pieces together. <br/>
         <br/>
         A pony wall art generated and laser cut using the generative program. <br/>
-        <a href="images/wall-art-1-hd.png"><img src="images/wall-art-1.png"></a><br/>
+        <a href="/images/wall-art-1-hd.png"><img src="/images/wall-art-1.png"></a><br/>
         The original image input. 'Horse' by Xu Beihong - a famous traditional Chinese ink painter.  <br/>
-        <img src="images/wall-art-1-2-hd.png"><br/>
+        <img src="/images/wall-art-1-2-hd.png"><br/>
         Size of the wall art is over 1 meter by 1 meter. Using SVG packing tools, I was able to pack it onto 6 pieces of 60cm x 30cm birch wood panels. <br/>
-        <a href="images/wall-art-2-hd.png"><img src="images/wall-art-2.png"></a><br/>
+        <a href="/images/wall-art-2-hd.png"><img src="/images/wall-art-2.png"></a><br/>
         Another wall sculpture inspired by Skyrim. (size: 1.5m x 0.5m) <br/>
-        <a href="images/wall-art-3-hd.png"><img src="images/wall-art-3.png"></a><br/>
+        <a href="/images/wall-art-3-hd.png"><img src="/images/wall-art-3.png"></a><br/>
         Another wall art inspired by a classic Chinese symbol. (size: 1.5m x 1.5m)<br/>
-        <a href="images/wall-art-4-hd.png"><img src="images/wall-art-4.png"></a><br/>
+        <a href="/images/wall-art-4-hd.png"><img src="/images/wall-art-4.png"></a><br/>
         <br/>
       </div>
     `
   }, {
+    id: 'gms',
     title: 'Guess My Sketch',
     categories: ['software'],
     thumb: 'images/thumbnails/gms.png',
@@ -139,7 +140,7 @@ let allProjects = [
         Originally modeled after <a href="https://quickdraw.withgoogle.com/">Quick! Draw</a>, Guess My Sketch expands its game 
         mechanism to include multiplayer and social sharing features. As Google's first move to crack the Chinese market in years, 
         GMS went viral and triggered massive sharing on social media, gaining millions of users within first week of launch. <br/>
-        <img src="images/gms-1.png"><br/>
+        <img src="/images/gms-1.png"><br/>
         I had the pleasure to work on the core team of GMS, co-leading product design and engineering execution since project inception.
         Engineering responsibility included delivering a world-class slick game client (using we stack), building scalable backends that
         support high volume traffic, as well as multiplayer networking programming. <br/>
@@ -162,13 +163,14 @@ let allProjects = [
         36Kr: <a href="https://36kr.com/p/5143909.html">Widely spread on Wechat in 3hrs, the first mini program of Google is here	</a><br/>
         Tencent: <a href="https://new.qq.com/omn/20180718/20180718A13WSX.html">What Is The Right Way To Play The Mini Program From Google?</a><br/>
         Netease: <a href="http://3g.163.com/tech/18/0719/11/DN2UI8MU00098IEO.html">Google’s AI Version of “Guess My Drawing” Is Prevailing on the Wechat, the Technology behind Is Here </a><br/>
-        <img src="images/gms-2.gif" style="width:325px">
-        <img src="images/gms-3.gif" style="width:325px"><br/>
+        <img src="/images/gms-2.gif" style="width:325px">
+        <img src="/images/gms-3.gif" style="width:325px"><br/>
         Scan the QR code below to try it out in WeChat!
-        <img src="images/gms-4.jpg"><br/>
+        <img src="/images/gms-4.jpg"><br/>
       </div>
     `
   }, {
+    id: 'ar-prototype',
     title: 'AR generative art prototype',
     categories: ['software'],
     thumb: 'images/thumbnails/ar-prototype.png',
@@ -181,18 +183,19 @@ let allProjects = [
         Android and iOS. <br/>
         <br/>
         I wrote a generative algorithm that creates 3D cardboard models (geometry + UV + textures) from photos. <br/>
-        <a href="images/ar-prototype-1-hd.png"><img src="images/ar-prototype-1.png"></a><br/>
+        <a href="/images/ar-prototype-1-hd.png"><img src="/images/ar-prototype-1.png"></a><br/>
         <br/>
-        <img src="images/ar-prototype-2.gif" style="width:200px">
-        <img src="images/ar-prototype-4.gif" style="width:200px">
-        <img src="images/ar-prototype-5.gif" style="width:200px"><br/>
+        <img src="/images/ar-prototype-2.gif" style="width:200px">
+        <img src="/images/ar-prototype-4.gif" style="width:200px">
+        <img src="/images/ar-prototype-5.gif" style="width:200px"><br/>
         <br/>
         Another generative material explored: bronze. Some bronze frames generated from 2D images: <br/>
-        <a href="images/ar-prototype-6-hd.png"><img src="images/ar-prototype-6.png"></a><br/>
+        <a href="/images/ar-prototype-6-hd.png"><img src="/images/ar-prototype-6.png"></a><br/>
         <br/>
       <div/>
     `
   }, {
+    id: 'mr-jelly',
     title: 'Mr.Jelly',
     categories: ['software'],
     thumb: 'images/thumbnails/mr-jelly.png',
@@ -207,16 +210,17 @@ let allProjects = [
         coding large portion of the gameplay, I owned the graphic stack, ranging from animation, in game effects, as well as  infrastures 
         and tools for asset management. I also designed and produced all 3D assets and half of 2D assets in the game. <br/>
         <br/>
-        <a href="images/mr-jelly-1-hd.png"><img src="images/mr-jelly-1.png"></a><br/>
+        <a href="/images/mr-jelly-1-hd.png"><img src="/images/mr-jelly-1.png"></a><br/>
         Game features sets of colorful, minimalist backgrounds and main character models.
-        <a href="images/mr-jelly-3-hd.png"><img src="images/mr-jelly-3.png"></a><br/>
-        <a href="images/mr-jelly-4-hd.png"><img src="images/mr-jelly-4.png"></a><br/>
+        <a href="/images/mr-jelly-3-hd.png"><img src="/images/mr-jelly-3.png"></a><br/>
+        <a href="/images/mr-jelly-4-hd.png"><img src="/images/mr-jelly-4.png"></a><br/>
         A pipeline for auto-color import from SVG sheet. One can fine-tune color palette across backgrounds and jelly models by directly 
         editing an SVG file in Illustrator.<br/>
-        <a href="images/mr-jelly-2-hd.png"><img src="images/mr-jelly-2.png"></a><br/>
+        <a href="/images/mr-jelly-2-hd.png"><img src="/images/mr-jelly-2.png"></a><br/>
       </div>
     `
   }, {
+    id: 'gen-cityscape',
     title: 'Generative cityscape',
     categories: ['gen-art'],
     thumb: 'images/thumbnails/gen-cityscape.png',
@@ -229,18 +233,19 @@ let allProjects = [
         <br/>
         The below generative cityscape is to commemorate my days spent working on Google AdWords. Look closely and you will find 
         Ad-themed 3D objects (clicks / targeting / ca$h) and texts scattered everywhere :) <br/>
-        <a href="images/gen-cityscape-1-hd.png"><img src="images/gen-cityscape-1.png"></a><br/>
+        <a href="/images/gen-cityscape-1-hd.png"><img src="/images/gen-cityscape-1.png"></a><br/>
         The buildings are generated from a real map of the Google campus, where Ads teams used to locate. <br/>
-        <a href="images/gen-cityscape-2-hd.png"><img src="images/gen-cityscape-2.png"></a><br/>
+        <a href="/images/gen-cityscape-2-hd.png"><img src="/images/gen-cityscape-2.png"></a><br/>
         The source map of Google Mountain View campus, in OpenStreetView.
-        <img src="images/gen-cityscape-3-hd.png"><br/>
+        <img src="/images/gen-cityscape-3-hd.png"><br/>
         Early prototype I did way back in 2014, where I generated castles from Carnegie Mellon University map (thus, 'Carnegie Castles').<br/>
-        <a href="images/gen-cityscape-4-hd.png"><img src="images/gen-cityscape-4.png"></a><br/>
+        <a href="/images/gen-cityscape-4-hd.png"><img src="/images/gen-cityscape-4.png"></a><br/>
         The source map of CMU campus, in OpenStreetView.
-        <a href="images/gen-cityscape-5-hd.png"><img src="images/gen-cityscape-5.png"></a><br/>
+        <a href="/images/gen-cityscape-5-hd.png"><img src="/images/gen-cityscape-5.png"></a><br/>
       </div>
     `,
   }, {
+    id: 'iconic-history',
     title: 'Iconic History',
     categories: ['software'],
     thumb: 'images/thumbnails/iconic-history.png',
@@ -265,12 +270,13 @@ let allProjects = [
       <br/>
       <a href="https://github.com/yemount/IconicHistory">Source code on Github</a><br/>
       <br/>
-      <a href="images/iconic-history-1-hd.png"><img src="images/iconic-history-1.png"></a><br/>
+      <a href="/images/iconic-history-1-hd.png"><img src="/images/iconic-history-1.png"></a><br/>
       <br/>
       <br/>
       </div>
     `,
   }, {
+    id: 'low-poly',
     title: 'Low poly modeling',
     categories: ['tech-art'],
     thumb: 'images/thumbnails/low-poly.png',
@@ -280,24 +286,25 @@ let allProjects = [
       As a hobby 3D artist, I love experimenting the low poly art style on novel subject matters.<br/>
       <br/>
       Capturing just another day in the Google office: <br/>
-      <a href="images/low-poly-1-hd.png"><img src="images/low-poly-1.png"></a><br/>
+      <a href="/images/low-poly-1-hd.png"><img src="/images/low-poly-1.png"></a><br/>
       <br/>
       Commemorating my teammates @ Google Adwords Full Creative Automation: <br/>
-      <a href="images/low-poly-2-hd.png"><img src="images/low-poly-2.png"></a><br/>
+      <a href="/images/low-poly-2-hd.png"><img src="/images/low-poly-2.png"></a><br/>
       <br/>
       Trying out low poly on European buildings:<br/>
-      <img src="images/low-poly-3.png"><br/>
+      <img src="/images/low-poly-3.png"><br/>
       <br/>
       Trying out low poly on gorgeous mountains in China:<br/>
-      <a href="images/low-poly-4-hd.png"><img src="images/low-poly-4.png"></a><br/>
-      <a href="images/low-poly-4-1-hd.png"><img src="images/low-poly-4-1.png"></a><br/>
+      <a href="/images/low-poly-4-hd.png"><img src="/images/low-poly-4.png"></a><br/>
+      <a href="/images/low-poly-4-1-hd.png"><img src="/images/low-poly-4-1.png"></a><br/>
       <br/>
       Chinese grocery market vendor can rock low poly too!<br/>
-      <a href="images/low-poly-5-hd.png"><img src="images/low-poly-5.png"></a><br/>
+      <a href="/images/low-poly-5-hd.png"><img src="/images/low-poly-5.png"></a><br/>
       <br/>
       </div>
     `
   }, {
+    id: 'whiteboard',
     title: 'Whiteboard drawing @ Google',
     categories: ['drawing'],
     thumb: 'images/thumbnails/whiteboard.png',
@@ -306,23 +313,24 @@ let allProjects = [
         I do drawings on Google office whiteboards, and I teach whiteboard drawing at Google. <br/>
         <br/>
         2 meter by 1 meter gigantic whiteboard dragon, drawn in Google office, for celeberating Halloween 2014.<br/>
-        <a href="images/whiteboard-1-hd.png"><img src="images/whiteboard-1.png"></a><br/>
+        <a href="/images/whiteboard-1-hd.png"><img src="/images/whiteboard-1.png"></a><br/>
         <br/>
         A class diagram evolved into a fantasy-style map. 2015.<br/>
-        <a href="images/whiteboard-2-hd.png"><img src="images/whiteboard-2.png"></a><br/>
+        <a href="/images/whiteboard-2-hd.png"><img src="/images/whiteboard-2.png"></a><br/>
         <br/>
         Death Valley inspired promotion whiteboard drawing for Google month of Serving 2016.<br/>
-        <a href="images/whiteboard-3-hd.png"><img src="images/whiteboard-3.png"></a><br/>
-        <a href="images/whiteboard-4-hd.png"><img src="images/whiteboard-4.png"></a><br/>
+        <a href="/images/whiteboard-3-hd.png"><img src="/images/whiteboard-3.png"></a><br/>
+        <a href="/images/whiteboard-4-hd.png"><img src="/images/whiteboard-4.png"></a><br/>
         Another giant dragon on a sliding door, drawn on glass.<br/>
-        <a href="images/whiteboard-7-hd.png"><img src="images/whiteboard-7.png"></a><br/>
-        <a href="images/whiteboard-8-hd.png"><img src="images/whiteboard-8.png"></a><br/>
+        <a href="/images/whiteboard-7-hd.png"><img src="/images/whiteboard-7.png"></a><br/>
+        <a href="/images/whiteboard-8-hd.png"><img src="/images/whiteboard-8.png"></a><br/>
         Teaching whiteboard drawing class and making Google engineers draw cats.<br/>
-        <a href="images/whiteboard-5-hd.png"><img src="images/whiteboard-5.png"></a><br/>
-        <a href="images/whiteboard-6-hd.png"><img src="images/whiteboard-6.png"></a><br/>
+        <a href="/images/whiteboard-5-hd.png"><img src="/images/whiteboard-5.png"></a><br/>
+        <a href="/images/whiteboard-6-hd.png"><img src="/images/whiteboard-6.png"></a><br/>
       </div>
     `
   }, {
+    id: 'drawing',
     title: 'Drawings & paintings',
     categories: ['drawing'],
     thumb: 'images/thumbnails/drawing.png',
@@ -333,19 +341,19 @@ let allProjects = [
         Check out my <a href="https://www.instagram.com/yemount/">Instagram</a> for more artwork. <br/>
         <br/>
         Nagano-Izu onsen trip medley, Ipad Pro, 2019. <br/>
-        <a href="images/drawing-1-hd.png"><img src="images/drawing-1.png"></a><br/>
+        <a href="/images/drawing-1-hd.png"><img src="/images/drawing-1.png"></a><br/>
         Takayama trip medley, fine point pen, 2017. <br/>
-        <a href="images/drawing-2-hd.png"><img src="images/drawing-2-hd.png"></a><br/>
+        <a href="/images/drawing-2-hd.png"><img src="/images/drawing-2-hd.png"></a><br/>
         Lake Shima, Ipad Pro, 2019. <br/>
-        <a href="images/drawing-3-hd.png"><img src="images/drawing-3.png"></a><br/>
+        <a href="/images/drawing-3-hd.png"><img src="/images/drawing-3.png"></a><br/>
         Swiss mountains 1, watercolor, 2018. <br/>
-        <a href="images/drawing-4-hd.png"><img src="images/drawing-4.png"></a><br/>
+        <a href="/images/drawing-4-hd.png"><img src="/images/drawing-4.png"></a><br/>
         Swiss mountains 2, watercolor, 2018. <br/>
-        <a href="images/drawing-5-hd.png"><img src="images/drawing-5.png"></a><br/>
+        <a href="/images/drawing-5-hd.png"><img src="/images/drawing-5.png"></a><br/>
         Beef hotpoting, watercolor, 2017. <br/>
-        <a href="images/drawing-6-hd.png"><img src="images/drawing-6.png"></a><br/>
+        <a href="/images/drawing-6-hd.png"><img src="/images/drawing-6.png"></a><br/>
         Takayama mountains, fine point pen, 2017. <br/>
-        <a href="images/drawing-7-hd.png"><img src="images/drawing-7.png"></a><br/>
+        <a href="/images/drawing-7-hd.png"><img src="/images/drawing-7.png"></a><br/>
         <br/>
         <br/>
       </div>
@@ -360,6 +368,7 @@ let allProjects = [
   //   categories: ['tech-art'],
   // },
   {
+    id: 'reel',
     title: 'Reel 2010-2014',
     thumb: 'images/thumbnails/reel.png',
     content: `
@@ -374,31 +383,47 @@ let allProjects = [
   }
 ];
 
-Vue.directive('innerhtml', {
-  bind: function (el, binding) {
-    console.log('bound');
-    el.innerHTML = binding.value.content;
+const Home = { template: '#home-template' };
+const Projects = {
+  template: '#projects-template',
+  props: ['projects'],
+};
+const ProjectDetails = {
+  template: '#project-details-template',
+  props: ['id'],
+  computed: {
+    project: function () {
+      return allProjects.find(proj => proj.id === this.id);
+    },
   }
+}
+const routes = [
+  { path: '/', component: Home },
+  {
+    path: '/projects', component: Projects, props: {
+      projects: allProjects,
+    }
+  },
+  {
+    path: '/project-details/:id', component: ProjectDetails, props: true
+  },
+];
+const router = new VueRouter({ routes: routes, mode: 'history' });
+
+Vue.component('left-navbar', {
+  template: '#left-navbar-template',
+  props: ['projects'],
 });
 
 window.onload = () => {
   new Vue({
     el: '#app',
+    router: router,
     data: {
-      showContent: showContent,
       projects: allProjects,
       selectedProject: null,
     },
-    computed: {
-      projectDetailsAsHTML: function () {
-        return this.selectedProject.content;
-      },
-    },
     methods: {
-      toggleContent: function (tag) {
-        Object.keys(this.showContent).forEach(tag => this.showContent[tag] = false);
-        this.showContent[tag] = true;
-      },
       filterProjects: function (tag) {
         this.toggleContent('projects');
         if (!tag) {

@@ -3,7 +3,68 @@
 
 <head>
     <script type="text/javascript" src="lib/vue.js"></script>
+    <script type="text/javascript" src="lib/vue-router.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/x-template" id="home-template">
+        <div class="home-root">
+            <div class="intro">
+                Shan is a creative engineer and generative artist based in Shanghai, China. She makes art with code.
+                <br/>
+                <br/> Her interest focuses on exploring intricate visuals enabled only by computer algorithms, and extending
+                the creative experience to everyone through interactive media.
+                <br/>
+                <br/> For collaboration enqueries, please
+                <a href="#"> get in touch</a>.
+                <br/> For buying prints, please checkout
+                <a href="#"> the print shop</a>.
+                <br/>
+                <br/>
+                <br/>
+                <p class="contact-title bold">Contact</p>
+                <p>yemount@gmail.com</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+                <p>Weibo</p>
+            </div>
+            <div class="cover-image">
+                <img src="images/cover-image.png">
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="projects-template">
+        <div class="projects-root">
+            <left-navbar></left-navbar>
+            <div class="project-container">
+                <div class="project-card" v-for="project in projects">
+                    <router-link :to="`/project-details/${project.id}`">
+                        <p>{{project.title}}</p>
+                        <img v-if="project.thumb" v-bind:src="project.thumb"></img>
+                    </router-link>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="left-navbar-template">
+        <div class="left-bar">
+            <p class="lb-header bold">Categories</p>
+            <p class="lb-sub clickable" v-on:click="filterProjects()">All</p>
+            <p class="lb-sub clickable" v-on:click="filterProjects('gen-art')">Generative art</p>
+            <p class="lb-sub clickable" v-on:click="filterProjects('software')">Software</p>
+            <p class="lb-sub clickable" v-on:click="filterProjects('tech-art')">Technical art</p>
+            <p class="lb-sub clickable" v-on:click="filterProjects('drawing')">2D drawings</p>
+        </div>
+    </script>
+    <script type="text/x-template" id="project-details-template">    
+        <div class="project-details-root">
+            <left-navbar></left-navbar>
+            <div class="project-details-container">
+                <p class="title bold ">{{project.title}}</p>
+                <br/>
+                <br/>
+                <div v-html="project.content"></div>
+            </div>
+        </div>
+    </script>
     <style>
         body {
             margin: 0;
@@ -58,14 +119,15 @@
         }
 
         .body,
-        #content-default,
-        #content-projects {
+        .home-root,
+        .projects-root,
+        .project-details-root {
             display: flex;
             width: 100%;
         }
 
         .body,
-        #content-default {
+        .home-root {
             justify-content: space-evenly;
         }
 
@@ -87,12 +149,9 @@
             font-size: 18px;
         }
 
-        #content-projects {
-            justify-content: left;
-        }
-
-        #content-projects .left-bar {
+        .left-bar {
             width: 200px;
+            min-width: 200px;
             height: 200px;
             margin: 10px 60px 0 60px;
             padding: 20px;
@@ -132,15 +191,16 @@
             height: 200px;
         }
 
-        .content-project-details {
+        .project-details-container {
             width: 800px;
+            margin-top: 10px;
         }
 
-        .content-project-details .title {
+        .project-details-container .title {
             font-size: 16px;
         }
 
-        .content-project-details img {
+        .project-details-container img {
             max-width: 700px;
             margin: 20px;
         }
@@ -150,69 +210,24 @@
 <body>
     <div id="app">
         <div class="header">
-            <p class="page-title bold clickable" v-on:click="toggleContent('default')">Shan Huang</p>
+            <p class="page-title bold">
+                <router-link to="/">Shan Huang</router-link>
+            </p>
             <div class="header-tabs">
-                <p class="clickable" v-on:click="toggleContent('projects')">Projects</p>
+                <p>
+                    <router-link to="/projects">Projects</router-link>
+                </p>
                 <p class="clickable">Shop</p>
                 <p class="clickable">About</p>
                 <p class="clickable">Contact</p>
             </div>
         </div>
         <div class="body">
-            <div id="content-default" v-if="showContent['default']">
-                <div class="intro">
-                    Shan is a creative engineer and generative artist based in Shanghai, China. She makes art with code.
-                    <br/>
-                    <br/> Her interest focuses on exploring intricate visuals enabled only by computer algorithms, and extending
-                    the creative experience to everyone through interactive media.
-                    <br/>
-                    <br/> For collaboration enqueries, please
-                    <a href="#"> get in touch</a>.
-                    <br/> For buying prints, please checkout
-                    <a href="#"> the print shop</a>.
-                    <br/>
-                    <br/>
-                    <br/>
-                    <p class="contact-title bold">Contact</p>
-                    <p>yemount@gmail.com</p>
-                    <p>Instagram</p>
-                    <p>Twitter</p>
-                    <p>Weibo</p>
-                </div>
-                <div class="cover-image">
-                    <img src="images/cover-image.png">
-                </div>
-            </div>
-            <div id="content-projects" v-if="showContent['projects'] || showContent['project-details']">
-                <div class="left-bar">
-                    <p class="lb-header bold">Categories</p>
-                    <p class="lb-sub clickable" v-on:click="filterProjects()">All</p>
-                    <p class="lb-sub clickable" v-on:click="filterProjects('gen-art')">Generative art</p>
-                    <p class="lb-sub clickable" v-on:click="filterProjects('software')">Software</p>
-                    <p class="lb-sub clickable" v-on:click="filterProjects('tech-art')">Technical art</p>
-                    <p class="lb-sub clickable" v-on:click="filterProjects('drawing')">2D drawings</p>
-                </div>
-
-                <div>
-                    <div class="project-container" v-if="showContent['projects']">
-                        <div class=" project-card clickable " v-for="project in projects " v-on:click="showProject(project) ">
-                            <p>{{project.title}}</p>
-                            <image v-if="project.thumb " v-bind:src="project.thumb "></image>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content-project-details" v-if="showContent[ 'project-details'] ">
-                    <p class="title bold">{{selectedProject.title}}</p>
-                    <br/>
-                    <br/>
-                    <div v-innerhtml="selectedProject"></div>
-                </div>
-            </div>
+            <router-view></router-view>
         </div>
         <div></div>
     </div>
-    <div class=" footer "></div>
+    <div class="footer"></div>
     </div>
 </body>
 
