@@ -331,7 +331,7 @@ const allProjects = [
     `
   }, {
     id: 'drawing',
-    title: 'Drawings & paintings',
+    title: 'Drawing & painting',
     categories: ['Visual art'],
     thumb: 'images/thumbnails/drawing.png',
     content: `
