@@ -75,7 +75,7 @@ const allProjects = [
         My name (Chinese character) in meow stroke <br/>
         <a href="/images/meow-stroke-5-hd.png"><img src="/images/meow-stroke-5.png"></a><br/>
         <br/>
-        The traingulate cat 'base vocabulary' <br/>
+        Traingulated cats as 'base vocabulary' <br/>
         <img src="/images/meow-stroke-3.png"><br/>
       </div>`,
   }, {
