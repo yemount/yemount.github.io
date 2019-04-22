@@ -8,20 +8,20 @@ const allProjects = [
       <div>
         2018<br/>
         <br/>
-        Triangular world scratch map is a computationally generated, laser cut-ready map blueprint. <br/>
+        Triangular scratch map is a computationally generated, laser cut-ready map blueprint of the whole world. <br/>
         <br/>
-        You can keep track of parts of the world you have adventured to by removing countries' interiors.
+        You can keep track of parts of the world you have adventured to by removing country interiors.
         Each country is filled with removable triangle bits.<br/>
         <a href="/images/world-map-1-hd.png"><img src="/images/world-map-1.png"></a><br/>
         <br/>
-        The generative algorithm creates shape, name tag and inner triangle division for each country, with additional optimization on vector paths to ensure
-        they are laser cuttable and removable. The original map data is based on a geoJSON file from <a href="http://geojson.org/">http://geojson.org/</a>.<br/>
+        The generative algorithm creates the shapes, name tags and inner triangle divisions for each country, with additional 
+        optimization to ensure vector paths are laser cuttable and detachable. The original map data is based on a geoJSON file from <a href="http://geojson.org/">http://geojson.org/</a>.<br/>
         <br/>
         The whole map is fully auto-generated with minimal hand editing. 
         <a href="/images/world-map-2-hd.png"><img src="/images/world-map-2.png"></a><br/>
-        Laser cutting on birch wood - fire! smoke! laser beam! and all that jazz!
+        Laser cutting on birch. Fire! smoke! laser beam! and all that jazz!
         <a href="/images/world-map-3-hd.png"><img src="/images/world-map-3.png"></a><br/>
-        I designed these supports to hold continents together, following the same triangular / low-poly style.
+        I designed these supports to hold continents together, following the same triangular style.
         <a href="/images/world-map-4-hd.png"><img src="/images/world-map-4.png"></a>
       </div> `,
   }, {
@@ -35,8 +35,11 @@ const allProjects = [
         Million shards is a series of generative prints I programmed and laser-engraved. The generative algorithm accepts 2D images as input and produces
         vector graphics data as output (ultimately exported as SVG).<br/>
         <br/>
-        At the core of the generative rule is Delaunay triangulation, though supporting algorithms (e.g. edge-detection) were adopted to stylize the visual output.<br/>
-        I tuned the algorithm to maximally preserve the image source features while introducing tons of intricate triangular details. Thus the name 'million shards'.<br/>
+        At the core of the generative rule is Delaunay triangulation, while supporting algorithms (e.g. edge-detection) were adopted to stylize the visual output.<br/>
+        The algorithm is tuned to maximally preserve the source image's features while introducing intricate triangular details. Thus the name 'million shards'.<br/>
+        <br/>
+        <br/>
+        Inspired by <a href="http://ravenkwok.com/">Raven Kwok</a>'s generated video <a href="http://ravenkwok.com/greatness/">Greatness</a>.
         <br/>
         <a href="/images/million-shards-1-hd.png"><img src="/images/million-shards-1.png"></a><br/>
         <a href="/images/million-shards-2-hd.png"><img src="/images/million-shards-2.png"></a><br/>
@@ -48,7 +51,7 @@ const allProjects = [
         <a href="/images/million-shards-7-hd.png"><img src="/images/million-shards-7.png"></a><br/>
         Early prototypes featuring triangulated images and cross hatches, drawn using a plotter. <br/>
         <a href="/images/million-shards-8-hd.png"><img src="/images/million-shards-8.png"></a><br/>
-        Yes, yeeeesss... Plotters are addictive to look at.<br/>
+        And... Plotters can be addictive to look at.<br/>
         <img src="/images/plotter.gif"><br/>
         <br/>
       </div>`,
@@ -60,12 +63,10 @@ const allProjects = [
     content: `
       <div>2019<br/>
         <br/>
-        Derived from Million shards, Meow stroke explores the fun surprises (and horror) enabled by interactive generative structures.<br/>
+        Derived from Million shards, Meow stroke explores the fun surprise (and horror) that arises from interactive generative structures.<br/>
         <br/>
-        The generative rule is inspired by cat's favorite activity - stretching. Given a user input stroke, a vector art of a cat 
-        is stretched along the stroke path, creating an uncanny-looking cat imagery. <br/>
-        <br/>
-        (I'm thinking about making this a WeChat miniprogram - let me know if you think that should happen!)
+        The generative rule is inspired by cats' favorite activity - stretching. Given a user input stroke, vector art of a cat 
+        is stretched along the stroke path, creating the uncanny-looking cat image. <br/>
         <br/>
         <a href="/images/meow-stroke-1-hd.png"><img src="/images/meow-stroke-1.png"></a><br/>
         The raw hand drawn stroke input <br/>
@@ -87,10 +88,9 @@ const allProjects = [
       <div>2019<br/>
         <br/>
         Ink trail is an ongoing generative series derived from an ink simulation algorithm I created. The algorithm
-        mimics the effect of Chinese calligraphy with vector graphics. Because vector paths are easier to animate and 
-        distort, they introduce exciting potentials to animate & abstract the visuals.<br/>
+        mimics the effect of Chinese calligraphy with vector graphics, which enables unseen ink distortion and animation effects.<br/>
         <br/>
-        The latest, unfinished piece is a short animation sequence brining ink lotus to life. Demo animation as below:<br/>
+        The latest, unfinished piece is a short animation sequence that brings ink lotus to life. Demo animation as below:<br/>
         <img src="/images/ink-trail-anim.gif"><br/>
         <br/>
         Lotus flower pond, generated from a particle system where each particle is a leaf or a pedal, and springs are placed between
@@ -115,9 +115,9 @@ const allProjects = [
         to create laser-cuttable vector diagrams, paying additional attention to generating supports & connector
         structures to hold wooden pieces together. <br/>
         <br/>
-        A pony wall art generated and laser cut using the generative program. <br/>
+        Here's a wooden pony created through the generative system. <br/>
         <a href="/images/wall-art-1-hd.png"><img src="/images/wall-art-1.png"></a><br/>
-        The original image input. 'Horse' by Xu Beihong - a famous traditional Chinese ink painter.  <br/>
+        The original image input. 'Horse' by Xu Beihong - an iconic Chinese calligraphy painting.  <br/>
         <img src="/images/wall-art-1-2-hd.png"><br/>
         Size of the wall art is over 1 meter by 1 meter. Using SVG packing tools, I was able to pack it onto 6 pieces of 60cm x 30cm birch wood panels. <br/>
         <a href="/images/wall-art-2-hd.png"><img src="/images/wall-art-2.png"></a><br/>
@@ -227,20 +227,20 @@ const allProjects = [
     content: `
       <div>2016<br/>
         <br/>
-        Generative cityscape originates from an experiment to create 3D fantasy-style cities from 2D real world map.
+        Generative cityscape originates from an experiment to create 3D fantasy-style cities from 2D world map.
         I took geo map data from <a href="www.openstreetmap.org">www.openstreetmap.org</a> and applied algorithmic rules 
-        to generate different types of buildings (e.g. buildings with pointy roof / platform roof) from base 2D geometries.<br/>
+        to generate different types of buildings (e.g. pointy roof vs. platform roof) from the base 2D geometries.<br/>
         <br/>
-        The below generative cityscape is to commemorate my days spent working on Google AdWords. Look closely and you will find 
+        The below generative cityscape is to memorize my days working on Google AdWords. Look closely and you will find 
         Ad-themed 3D objects (clicks / targeting / ca$h) and texts scattered everywhere :) <br/>
         <a href="/images/gen-cityscape-1-hd.png"><img src="/images/gen-cityscape-1.png"></a><br/>
-        The buildings are generated from a real map of the Google campus, where Ads teams used to locate. <br/>
+        The buildings are generated from a real map of the Google campus, where Ad teams used to sit. <br/>
         <a href="/images/gen-cityscape-2-hd.png"><img src="/images/gen-cityscape-2.png"></a><br/>
-        The source map of Google Mountain View campus, in OpenStreetView.
+        The data source - map of Google Mountain View campus, in OpenStreetView.
         <img src="/images/gen-cityscape-3-hd.png"><br/>
-        Early prototype I did way back in 2014, where I generated castles from Carnegie Mellon University map (thus, 'Carnegie Castles').<br/>
+        Early prototype I did in 2014, where I generated castles from Carnegie Mellon University map (thus, 'Carnegie Castles').<br/>
         <a href="/images/gen-cityscape-4-hd.png"><img src="/images/gen-cityscape-4.png"></a><br/>
-        The source map of CMU campus, in OpenStreetView.
+        The data source - map of CMU campus, in OpenStreetView.
         <a href="/images/gen-cityscape-5-hd.png"><img src="/images/gen-cityscape-5.png"></a><br/>
       </div>
     `,
