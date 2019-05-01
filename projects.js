@@ -39,7 +39,7 @@ const allProjects = [
         The algorithm is tuned to maximally preserve the source image's features while introducing intricate triangular details. Thus the name 'million shards'.<br/>
         <br/>
         <br/>
-        Inspired by <a href="http://ravenkwok.com/">Raven Kwok</a>'s generated video <a href="http://ravenkwok.com/greatness/">Greatness</a>.
+        Inspired by <a href="http://ravenkwok.com/greatness/">Greatness</a>, a generative video by the amazing <a href="http://ravenkwok.com/">Raven Kwok</a>.
         <br/>
         <a href="/images/million-shards-1-hd.png"><img src="/images/million-shards-1.png"></a><br/>
         <a href="/images/million-shards-2-hd.png"><img src="/images/million-shards-2.png"></a><br/>
