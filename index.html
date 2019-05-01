@@ -7,7 +7,7 @@
     <script type="text/javascript" src="lib/vue-router.js"></script>
     <script type="text/javascript" src="projects.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <script type="text/x-template" id="home-template">
+    <script type="text/x-template" id="about-template">
         <div class="home-root">
             <div class="intro">
                 Shan is a creative engineer and generative artist based in Shanghai, China. She makes art with code.
@@ -17,16 +17,15 @@
                 <br/>
                 <br/> For collaboration enqueries, please
                 <a href="mailto:yemount@gmail.com"> get in touch</a>.
-                <!-- <br/> For buying prints, please checkout
-                <a href="#"> the print shop</a>. -->
                 <br/>
                 <br/>
                 <br/>
+                2014 - current, Google, Senior Software Engineer.<br/>
+                2010 - 2014, Carnegie Mellon University, BS in Computer Science, additional major in HCI.
                 <br/>
                 <br/>
-                <p class="home-title bold"><router-link to="/projects">Projects</router-link></p><br/>
                 <p class="home-title bold">Contact</p>
-                <a href="mailto:yemount@gmail.com"><p>yemount@gmail.com</p></a>
+                <a href="mailto:yemount(at)gmail.com"><p>yemount@gmail.com</p></a>
                 <a href="https://www.instagram.com/yemount/"><p>Instagram</p></a>
                 <a href="https://twitter.com/yemount"><p>Twitter</p></a>
             </div>
@@ -71,11 +70,11 @@
             </div>
         </div>
     </script>
-    <script type="text/x-template" id="about-template">
+    <!-- <script type="text/x-template" id="about-template">
         <div class="about-root">
             ...
         </div>
-    </script>
+    </script> -->
     <style>
         body {
             margin: 0;
@@ -143,7 +142,7 @@
         }
 
         .intro {
-            width: 400px;
+            width: 600px;
             margin-top: 100px;
             font-size: 16px;
         }
@@ -289,11 +288,9 @@
                 <p>
                     <router-link to="/projects">Projects</router-link>
                 </p>
-                <!-- <p class="clickable">Shop</p> -->
                 <p>
                     <router-link to="/about">About</router-link>
                 </p>
-                <p>Contact</p>
             </div>
         </div>
         <div class="body">

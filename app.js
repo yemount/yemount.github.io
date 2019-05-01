@@ -1,5 +1,5 @@
 const navCategories = ['All', 'Generative art', 'Product design', 'Visual art', 'Digital fabrication', 'Game dev', 'Technical art'];
-const Home = { template: '#home-template' };
+// const Home = { template: '#home-template' };
 const About = { template: '#about-template' };
 const Projects = {
   template: '#projects-template',
@@ -24,7 +24,11 @@ const ProjectDetails = {
   }
 }
 const routes = [
-  { path: '/', component: Home },
+  {
+    path: '/', component: Projects, props: {
+      projects: allProjects,
+    }
+  },
   { path: '/about', component: About },
   {
     path: '/projects', component: Projects, props: {
