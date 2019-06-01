@@ -1,6 +1,11 @@
 const navCategories = ['All', 'Generative art', 'Product design', 'Visual art', 'Digital fabrication', 'Game dev', 'Technical art'];
-// const Home = { template: '#home-template' };
 const About = { template: '#about-template' };
+const Experiments = {
+  template: '#experiments-template',
+  computed: {
+    experiments: () => allExperiments,
+  },
+};
 const Projects = {
   template: '#projects-template',
   props: ['category'],
@@ -34,6 +39,11 @@ const routes = [
     path: '/projects', component: Projects, props: {
       projects: allProjects,
     }
+  },
+  {
+    path: '/experiments', component: Experiments, props: {
+      experiments: allExperiments,
+    },
   },
   {
     path: '/projects/:category', component: Projects, props: true,

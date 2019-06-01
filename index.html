@@ -5,6 +5,7 @@
 <head>
     <script type="text/javascript" src="lib/vue.js"></script>
     <script type="text/javascript" src="lib/vue-router.js"></script>
+    <script type="text/javascript" src="experiments.js"></script>
     <script type="text/javascript" src="projects.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/x-template" id="about-template">
@@ -24,6 +25,11 @@
                 2010 - 2014, Carnegie Mellon University, BS in Computer Science, additional major in HCI.
                 <br/>
                 <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 <p class="home-title bold">Contact</p>
                 <a href="mailto:yemount(at)gmail.com"><p>yemount@gmail.com</p></a>
                 <a href="https://www.instagram.com/yemount/"><p>Instagram</p></a>
@@ -31,6 +37,19 @@
             </div>
             <div class="cover-image">
                 <img src="images/cover-image.png">
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="experiments-template">
+        <!-- TODO: Defer loading for unshown feeds. -->
+        <div class="experiments-container">
+            <div class="experiment-card" v-for="experiment in experiments">
+                <img v-if="experiment.image" v-bind:src="experiment.image"></img>
+                <div v-html="experiment.embed"></div>
+                <div class="text-container">
+                    <p v-if="experiment.title" class="title">{{experiment.title}}</p>
+                    <p v-if="experiment.date" class="date">{{experiment.date}}</p>
+                </div>
             </div>
         </div>
     </script>
@@ -70,212 +89,7 @@
             </div>
         </div>
     </script>
-    <!-- <script type="text/x-template" id="about-template">
-        <div class="about-root">
-            ...
-        </div>
-    </script> -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            border: none;
-            color: #333;
-            font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
-            font-size: 14px;
-            background: #f2f2f2;
-        }
-
-        a {
-            color: black;
-            text-decoration: underline;
-        }
-
-        p,
-        div {
-            margin: 0;
-            font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-        }
-
-        .bold {
-            font-weight: 800;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            margin: 40px;
-            font-size: 16px;
-        }
-
-        .page-title {
-            font-size: 28px;
-        }
-
-        .header-tabs {
-            display: flex;
-        }
-
-        .header-tabs p {
-            margin: 0 10px 0 10px;
-        }
-
-        .body,
-        .home-root,
-        .projects-root,
-        .project-details-root {
-            display: flex;
-            width: 100%;
-        }
-
-        .body,
-        .home-root {
-            justify-content: space-evenly;
-        }
-
-        .body {
-            margin-bottom: 100px;
-        }
-
-        .intro {
-            width: 600px;
-            margin-top: 100px;
-            font-size: 16px;
-        }
-
-        .cover-image {
-            width: 400px;
-        }
-
-        .cover-image img {
-            height: 600px;
-        }
-
-        .home-title {
-            font-size: 18px;
-        }
-
-        .left-bar {
-            width: 240px;
-            min-width: 240px;
-            height: 200px;
-            margin: 10px 60px 20px 60px;
-            padding: 20px 0 20px 20px;
-            background: white;
-        }
-
-        .left-bar .lb-header {
-            margin-bottom: 20px;
-        }
-
-        .left-bar .lb-sub {
-            margin: 5px 15px;
-        }
-
-        .lb-sub a,
-        .project-card a {
-            text-decoration: none;
-        }
-
-        .lb-sub .active a {
-            color: #3CB0DA;
-        }
-
-        .project-details-container a {
-            text-decoration: none;
-            color: #3CB0DA;
-        }
-
-        .project-container {
-            display: flex;
-            flex-wrap: wrap;
-            width: 950px;
-        }
-
-        .project-card {
-            width: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: white;
-            padding: 10px;
-            margin: 10px;
-        }
-
-        .project-card p {
-            width: 250px;
-        }
-
-        .project-card img {
-            margin-top: 10px;
-            width: 250px;
-            height: 250px;
-        }
-
-        .project-details-container {
-            width: 800px;
-            margin-top: 10px;
-        }
-
-        .project-details-container .title {
-            font-size: 16px;
-        }
-
-        .project-details-container img {
-            max-width: 700px;
-            margin: 20px;
-        }
-
-        @media screen and (max-width: 600px) {
-            #app {
-                overflow-x: hidden;
-            }
-
-            .header {
-                flex-direction: column;
-            }
-
-            .header-tabs {
-                margin-left: -10px;
-                margin-top: 10px;
-            }
-
-            .home-root,
-            .projects-root,
-            .project-details-root {
-                flex-direction: column;
-            }
-
-            .home-root .intro {
-                width: initial;
-                margin: 40px 40px 40px 40px;
-            }
-
-            .cover-image img {
-                width: 100%;
-                height: initial;
-            }
-
-            .project-container {
-                width: initial;
-                justify-content: center;
-            }
-
-            .project-details-container {
-                width: initial;
-                padding: 10px 40px;
-            }
-
-            .project-details-container img {
-                max-width: 100%;
-                margin-left: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -287,6 +101,9 @@
             <div class="header-tabs">
                 <p>
                     <router-link to="/projects">Projects</router-link>
+                </p>
+                <p>
+                    <router-link to="/experiments">Experiments</router-link>
                 </p>
                 <p>
                     <router-link to="/about">About</router-link>
