@@ -8,20 +8,26 @@
     <script type="text/javascript" src="experiments.js"></script>
     <script type="text/javascript" src="projects.js"></script>
     <script type="text/javascript" src="app.js"></script>
-    <script type="text/x-template" id="about-template">
+    <!-- <script type="text/x-template" id="about-template">
         <div class="home-root">
             <div class="intro">
-                Shan is a creative engineer and generative artist based in Shanghai, China. She makes art with code.
+                Shan is a programmer and artist based in Shanghai, China. She makes art with code.
                 <br/>
-                <br/> Her interest focuses on exploring intricate visuals enabled only by computer algorithms, and extending
-                the creative experience to everyone through interactive media.
+                <br/> Her interest lies in creating intricate visuals made possible only by computer algorithms, 
+                and enabling everyone to create algorithmic art by building tools.
                 <br/>
                 <br/> For collaboration requests, please
                 <a href="mailto:yemount@gmail.com"> get in touch</a>.
                 <br/>
                 <br/>
                 <br/>
-                2014 - current, Google, Senior Software Engineer.<br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <p class="home-title bold">Experiences</p>
+                2019 - current, Google, Product Manager / Creative Technologist.<br/>
+                2014 - 2019, Google, Senior Software Engineer.<br/>
                 2010 - 2014, Carnegie Mellon University, BS in Computer Science, additional major in HCI.
                 <br/>
                 <br/>
@@ -39,7 +45,7 @@
                 <img src="images/cover-image.png">
             </div>
         </div>
-    </script>
+    </script> -->
     <script type="text/x-template" id="experiments-template">
         <!-- TODO: Defer loading for unshown feeds. -->
         <div class="experiments-container">
@@ -55,25 +61,48 @@
     </script>
     <script type="text/x-template" id="projects-template">
         <div class="projects-root">
-            <left-navbar v-bind:activecategory="category"></left-navbar>
+            <!-- <left-navbar v-bind:activecategory="category"></left-navbar> -->
+            <div class="intro">
+                Hello! I'm Shan Huang, a programmer and artist based in Shanghai, currently working as a product manager / creative technologist at Google. <br/>
+                I create experimental art and animation through code. I also build tools to democratize this power.<br/>
+                <br/>
+                Outside work, I love to draw and play music. I suck at sports but am decent at games that don't require high reflex.
+                <br/>
+                <br/>
+                <div class="intro-social">
+                    <span>To get in touch:  </span>
+                    <span class="social-icons">
+                        <a href="mailto:yemount(at)gmail.com" target="_blank">
+                            <img src="images/icons/email_black_24dp.svg"></a>
+                        <a href="https://www.instagram.com/yemount/" target="_blank">
+                            <img src="images/icons/post_instagram_black_24dp.svg"></a>
+                        <a href="https://www.linkedin.com/in/shan-huang-73339267/" target="_blank">
+                            <img src="images/icons/post_linkedin_black_24dp.svg"></a>
+                        <a href="https://twitter.com/yemount" >
+                            <img src="images/icons/post_twitter_black_24dp.svg"></a>
+                    </span>
+                </div>
+            </div>
             <div class="project-container">
                 <div class="project-card" v-for="project in projects">
                     <router-link :to="`/project-details/${project.id}`">
-                        <p>{{project.title}}</p><br/>
-                        <img v-if="project.thumb" v-bind:src="project.thumb"></img>
+                        <p class="title">{{project.title}}</p><br/>
+                        <img v-if="project.thumb" v-bind:src="project.thumb">
+                        <p class="cover-description">{{project.coverDescription}}</p>
+                        <span v-for="tag in project.tags">{{tag}}</span>
                     </router-link>
                 </div>
             </div>
         </div>
     </script>
-    <script type="text/x-template" id="left-navbar-template">
+    <!-- <script type="text/x-template" id="left-navbar-template">
         <div class="left-bar">
             <p class="lb-header bold">Categories</p>
             <p class="lb-sub" v-for="category in categories">
                 <span v-bind:class="[category.isActive ? 'active' : '']"><router-link :to="`/projects/${category.category}`"> {{category.category}} ({{category.count}})</router-link></span>
             </p>
         </div>
-    </script>
+    </script> -->
     <script type="text/x-template" id="project-details-template">    
         <div class="project-details-root">
             <left-navbar></left-navbar>
@@ -105,9 +134,9 @@
                 <p>
                     <router-link to="/experiments">Experiments</router-link>
                 </p>
-                <p>
+                <!-- <p>
                     <router-link to="/about">About</router-link>
-                </p>
+                </p> -->
             </div>
         </div>
         <div class="body">

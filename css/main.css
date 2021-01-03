@@ -1,6 +1,18 @@
-@font-face {
+/* @font-face {
     font-family: OpenSans;
     src: url(fonts/OpenSans-Regular.ttf);
+} */
+
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/Lato-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/Lato-Bold.ttf);
+    font-weight: 800;
 }
 
 body {
@@ -10,14 +22,14 @@ body {
     padding: 0;
     border: none;
     color: #333;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: Lato;
     font-size: 14px;
     background: #f6f6f6;
 }
 
 #app {
     display: flex;
-    min-width: 1200px;
+    min-width: 800px;
     flex-direction: column;
 }
 
@@ -29,7 +41,7 @@ a {
 p,
 div {
     margin: 0;
-    font-family: 'Courier New', Courier, Monaco, monospace;
+    /* font-family: 'Courier New', Courier, Monaco, monospace; */
 }
 
 .bold {
@@ -47,8 +59,9 @@ div {
     font-size: 16px;
 }
 
-.page-title {
+.page-title a {
     font-size: 28px;
+    text-decoration: none;
 }
 
 .header-tabs {
@@ -72,18 +85,27 @@ div {
     justify-content: space-between;
 }
 
-.home-root {
-    margin: 40px;
-}
-
 .body {
-    margin-bottom: 100px;
+    margin: 0 30px 100px 30px;
 }
 
-.intro {
-    width: 600px;
+/* .intro {
+    width: 400px;
     margin-top: 60px;
     font-size: 16px;
+} */
+
+.intro {
+    margin: 0 10px 20px 10px;
+}
+
+.intro-social {
+    display: flex; 
+    align-items: center;
+}
+
+.intro-social img {
+    margin-left: 2px;
 }
 
 .cover-image img {
@@ -91,12 +113,13 @@ div {
 }
 
 .home-title {
-    font-size: 18px;
+    font-size: 22px;
+    color: #444444;
 }
 
 .left-bar {
-    width: 240px;
-    min-width: 240px;
+    width: 200px;
+    min-width: 200px;
     height: 200px;
     margin: 10px 10px 20px 40px;
     padding: 20px 0 20px 20px;
@@ -105,6 +128,7 @@ div {
 
 .left-bar .lb-header {
     margin-bottom: 20px;
+    font-size: 18px;
 }
 
 .left-bar .lb-sub {
@@ -114,6 +138,22 @@ div {
 .lb-sub a,
 .project-card a {
     text-decoration: none;
+}
+
+.project-card .title {
+    font-weight: 800;
+    font-size: 18px;
+    color: #444444;
+}
+
+.project-card .cover-description {
+    margin: 10px 0;
+}
+
+.project-card span {
+    background: #DDDDDD;
+    padding: 4px;
+    margin-right: 5px;
 }
 
 .lb-sub .active a {
@@ -128,11 +168,11 @@ div {
 .project-container {
     display: flex;
     flex-wrap: wrap;
-    width: 1050px;
+    width: 900px;
 }
 
 .project-card {
-    width: 300px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -142,34 +182,33 @@ div {
 }
 
 .project-card p {
-    width: 300px;
+    width: 400px;
 }
 
 .project-card img {
     margin-top: 10px;
-    width: 300px;
     height: 300px;
 }
 
 .project-details-container {
-    width: 800px;
+    width: 900px;
     margin-top: 10px;
-    margin-left: 50px;
+    margin-left: 10px;
 }
 
 .project-details-container p,
 .project-details-container div {
-    font-family: OpenSans;
+    font-family: Lato;
     color: #555;
 }
 
 .project-details-container .title {
-    font-size: 16px;
+    font-size: 19px;
 }
 
 .project-details-container img {
     max-width: 700px;
-    margin: 20px;
+    margin: 20px 20px 20px 0;
 }
 
 .experiments-container {
@@ -206,6 +245,10 @@ div {
     justify-content: space-between;
 }
 
+.projects-root {
+    flex-direction: column;
+}
+
 @media screen and (max-width: 600px) {
     #app {
         overflow-x: hidden;
@@ -222,7 +265,6 @@ div {
     }
 
     .home-root,
-    .projects-root,
     .project-details-root {
         flex-direction: column;
     }
